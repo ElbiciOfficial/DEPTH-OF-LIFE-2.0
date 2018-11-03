@@ -15,8 +15,12 @@ public class Interactor_story : MonoBehaviour {
     int inum1;
     public Animator door1;
     public Animator door2;
+    public Animator door3;
+    public Animator door4;
     private bool isopen1 = false;
     private bool isopen2 = false;
+    private bool isopen3 = false;
+    private bool isopen4 = false;
 
     public string itemname;
 
@@ -48,16 +52,27 @@ public class Interactor_story : MonoBehaviour {
                         if (ray_Hit.collider.tag == "Door")
                         {
 
-                            if (ray_Hit.collider.name == "door1-1")
+                            if (ray_Hit.collider.name == "Door1.1")
                             {
                                 isopen1 = !isopen1;
                                 door1.SetBool("open", isopen1);
 
                             }
-                            else if (ray_Hit.collider.name == "door1-2")
+                            else if (ray_Hit.collider.name == "Door1.2")
                             {
                                 isopen2 = !isopen2;
                                 door2.SetBool("open", isopen2);
+                            }
+                            else if(ray_Hit.collider.name == "Door2")
+                            {
+                                isopen3 = !isopen3;
+                                door3.SetBool("open", isopen3);
+
+                            }
+                            else if (ray_Hit.collider.name == "Door3")
+                            {
+                                isopen4 = !isopen4;
+                                door4.SetBool("open", isopen4);
                             }
 
                         }

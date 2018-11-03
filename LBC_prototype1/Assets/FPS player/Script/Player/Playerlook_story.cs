@@ -26,7 +26,6 @@ public class Playerlook_story : MonoBehaviour
     private void Update()
     {
 
-
             CameraRotation();
        
     }

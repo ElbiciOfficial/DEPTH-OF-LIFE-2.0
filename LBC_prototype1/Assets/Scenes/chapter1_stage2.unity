@@ -16641,7 +16641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseXInputName: Mouse X
   mouseYInputName: Mouse Y
-  mouseSensitivity: 100
+  mouseSensitivity: 60
   playerBody: {fileID: 1480876303}
 --- !u!81 &1867487167
 AudioListener:

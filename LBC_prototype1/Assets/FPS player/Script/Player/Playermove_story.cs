@@ -13,14 +13,17 @@ public class Playermove_story : MonoBehaviour
     [SerializeField] private float runBuildUpSpeed;
     [SerializeField] private KeyCode runKey;
     [SerializeField] private KeyCode walkKey;
+    [SerializeField] private KeyCode walkKey1;
+    [SerializeField] private KeyCode walkKey2;
+    [SerializeField] private KeyCode walkKey3;
 
     private float movementSpeed;
     //public Animator marcus;
 
     private CharacterController charController;
 
-    public int noweapon = 1;
-    public int withweapon = 0;
+    //public int noweapon = 1;
+    //public int withweapon = 0;
 
 
     private void Awake()
@@ -38,8 +41,8 @@ public class Playermove_story : MonoBehaviour
 
     public void arm(bool weapon)
     {
-        noweapon = 0;
-        withweapon = 1;
+        //noweapon = 0;
+        //withweapon = 1;
         Debug.Log("WITH WEAPON");
     }
 
@@ -60,8 +63,8 @@ public class Playermove_story : MonoBehaviour
 
     private void SetMovementSpeed()
     {
-        if (noweapon == 1 && withweapon == 0)
-        {
+        //if (noweapon == 1 && withweapon == 0)
+        //{
 
             //marcus.SetBool("walk", false);
             //marcus.SetBool("run", false);
@@ -73,7 +76,7 @@ public class Playermove_story : MonoBehaviour
 
                 movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
             }
-            else if (Input.GetKey(walkKey))
+            else if (Input.GetKey(walkKey) || Input.GetKey(walkKey1) || Input.GetKey(walkKey2) || Input.GetKey(walkKey3))
             {
 
                 //marcus.SetBool("walk", true);
@@ -81,35 +84,35 @@ public class Playermove_story : MonoBehaviour
 
                 movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
             }
-        }
-        else if (noweapon == 0 && withweapon == 1)
-        {
+        //}
+        //else if (noweapon == 0 && withweapon == 1)
+        //{
 
-            //marcus.SetBool("Wwalk", false);
-            //marcus.SetBool("Wrun", false);
-            //marcus.SetBool("run", false);
-            //marcus.SetBool("walk", false);
+        //    //marcus.SetBool("Wwalk", false);
+        //    //marcus.SetBool("Wrun", false);
+        //    //marcus.SetBool("run", false);
+        //    //marcus.SetBool("walk", false);
 
-            if (Input.GetKey(runKey))
-            {
-                //marcus.SetBool("Wrun", true);
-                //marcus.SetBool("Wwalk", false);
+        //    if (Input.GetKey(runKey))
+        //    {
+        //        //marcus.SetBool("Wrun", true);
+        //        //marcus.SetBool("Wwalk", false);
 
-                //marcus.SetBool("run", false);
-                //marcus.SetBool("walk", false);
-                movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
-            }
-            else if (Input.GetKey(walkKey))
-            {
+        //        //marcus.SetBool("run", false);
+        //        //marcus.SetBool("walk", false);
+        //        movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
+        //    }
+        //    else if (Input.GetKey(walkKey) && Input.GetKey(walkKey1) && Input.GetKey(walkKey2) && Input.GetKey(walkKey3))
+        //    {
 
-                //marcus.SetBool("Wwalk", true);
-                //marcus.SetBool("Wrun", false);
+        //        //marcus.SetBool("Wwalk", true);
+        //        //marcus.SetBool("Wrun", false);
 
-                //marcus.SetBool("run", false);
-                //marcus.SetBool("walk", false);
-                movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
-            }
-        }
+        //        //marcus.SetBool("run", false);
+        //        //marcus.SetBool("walk", false);
+        //        movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
+        //    }
+        //}
     }
 
 
